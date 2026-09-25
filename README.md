@@ -111,10 +111,5 @@ npm run build
 
 I file generati saranno disponibili nella cartella `dist/`.
 
-## Licenza
-
-Questo progetto è distribuito con licenza ISC.
-
----
 
 Realizzato con React, Express e Deezer API.
