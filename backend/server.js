@@ -4,17 +4,12 @@ import cors from 'cors';
 
 const app = express();
 
-app.listen(3000);
-
 app.use(
     cors({
         origin:'http://localhost:5173'
     })
 )
 
-app.get('/', (req,res) =>{
-res.send('Server BeatWave funzionante')
-})
 
 app.get('/api/deezer/track', async (req,res) => {
     try {
@@ -31,7 +26,13 @@ app.get('/api/deezer/track', async (req,res) => {
         
     } catch (error) {
         console.error(error)
-        res.send(error)
+        res.status(500).json({ error: error.message })
     }
    
 })
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Backend disponibile su http://localhost:${PORT}`);
+});

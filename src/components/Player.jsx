@@ -5,7 +5,7 @@ export default function Player({audio}) {
   return (
 
     <div>
-        <audio src={audio} controls autoPlay className="fixed top-0"/>
+        <audio src={audio} controls autoPlay className="fixed bottom-2 transform -translate-x-1/2"/>
     </div>
   )
 }

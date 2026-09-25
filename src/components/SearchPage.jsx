@@ -10,7 +10,7 @@ const [audio,setAudio] = useState(null);
 
 
   return (
-    <div>
+    <div className='justify-center items-center flex flex-col gap-4'>
         <SearchBar setResult={setResult}/>
         <SearchResult result={result} setAudio={setAudio} />
         <Player audio={audio}/>
