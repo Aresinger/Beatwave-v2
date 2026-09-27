@@ -52,21 +52,22 @@ export default function Player({ audio, isShow, setIsShow }) {
           </div>
         
       )} */}
-      <div className="fixed bottom-20 md:bottom-2 left-1/2 -translate-x-1/2 ">
+      <div className="fixed bottom-10 md:bottom-2 left-1/2 -translate-x-1/2 ">
         <audio
           src={audio}
           controls
           autoPlay
+          onPlay={() => setIsShow(true)}
           className={`transition-all  duration-700 ${isShow ? " opacity-100 translate-0" : "opacity-0 translate-y-20 pointer-events-none"}`}
         />
-        <button onClick={() => setIsShow(!isShow)}>
+        <button onClick={() => setIsShow(!isShow)} className="md:mb-4 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            className={`cursor-pointer size-6 absolute  ${isShow ? "translate-x-0 -translate-22" : "translate-x-0 -translate-5"} text-black hover:scale-125 transition-transform duration-300 ease-in-out`}
+            className={`mb-0 cursor-pointer size-8 p-1 absolute  bg-blue-500 rounded-full  ${isShow ? "translate-x-0 -translate-22" : "translate-x-0 -translate-5"} text-white hover:scale-125 transition-transform duration-300 ease-in-out`}
           >
             <path
               stroke-linecap="round"
